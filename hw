@@ -1,0 +1,54 @@
+import datetime 
+check 
+if a string is a valid date in the format "Month day, year" 
+
+def is_ valid date(date_str): 
+try: 
+datetime. datetime. strptime(date_str, "XB %d, %Y")
+return True 
+except ValueError: 
+return False 
+
+def_parse date(date_str):
+date_obj = datetime.datetime.strptime(date_str, "gB %d, %%*) 
+return date_obj. strftime("4m/%d/%/*) 
+
+def read and_filter_dates(): 
+current_date = datetime.datetime.now()
+parsed_dates = [] 
+
+while True: 
+date str = input()-strip() 
+if date_str = '-1': 
+break 
+
+if is_valid_date(date_str): 
+date obj = datetime.datetime.strptime(date_str, XB %d, Xy") 
+if date_obj ‹= current _date: 
+parsed dates-append (parse_date(date_str)) 
+
+return parsed dates 
+
+def parse_dates_from_file(input file, output_file): 
+current_date = datetime.datetime.now() 
+
+with open(input file, 'F') as f_in, open(output_file, 'w') as f_out: 
+for line in fin: 
+date str = line.strip() 
+if date str == '-1': 
+break 
+
+if is valid date(date str): 
+date _obj = datetime.datetime,strptime(date_str, "% %d, %") 
+if date_obj < current_date: 
+f_out write(parse date(date_str) + '\n') 
+
+# Main function 
+if name_ == "_main_"
+
+print ("Enter dates in the format Month day, year', Enter -1 to end,") 
+parsed dates = read _and_filter dates() 
+for date in parsed _dates: print (date) 
+input_file = "inputDates,txt" 
+output_file = "parsedDates.txt" 
+parse_dates_from file(input _file, output_file)
